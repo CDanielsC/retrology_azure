@@ -1,0 +1,917 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    color: #231F20;
+    background-color: #656565;
+    line-height: 1.6;
+    max-width: 1200px; 
+    align-content:center;
+    margin: 0 auto;
+}
+
+/* Color Variable */
+:root {
+    --dark-gray: #231F20;
+    --rich-red: #61070F;
+    --light-gold: #F3E288;
+    --white: #FFFFFF;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: var(--dark-gray);
+    padding: 10px 2em;
+}
+
+/* Container to center content and space out items */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns logo left, nav right */
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+/* Right-Aligned Navigation */
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--light-gold);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--white);
+}
+
+/* Hero Section */
+.index_hero {
+    background-color: var(--dark-gray);
+    color: var(--light-gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.index_hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.index_hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+/* .hero-button {
+    background-color: var(--light-gold);
+    color: var(--dark-gray);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: var(--rich-red);
+    color: var(--white);
+} */
+
+/*THIS IS A TEST (May not stay)*/
+
+.hero-button {
+    background-color: var(--light-gold);
+    color: var(--dark-gray);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Adds depth */
+    opacity: 0.9; /* Slightly transparent to stand out over images */
+}
+
+.hero-button:hover {
+    background-color: var(--rich-red);
+    color: var(--white);
+    transform: scale(1.05); /* Slightly increases the size on hover */
+}
+
+.hero-button:focus {
+    outline: 2px solid var(--rich-red); /* Adds a visible outline for accessibility */
+}
+
+.hero-button:active {
+    transform: scale(0.95); /* Adds a subtle "press" effect on click */
+}
+
+
+/* Main Section Titles */
+h2 {
+    font-size: 1.8em;
+    color: var(--rich-red);
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+/* Index Grid */
+.index_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "about about about"
+        "products events special_orders"
+        "coming_soon coming_soon coming_soon";
+    gap: 20px;
+    padding: 2em;
+    text-align: center;
+    background-color: var(--white);
+    /*border-bottom: 1px solid var(--dark-gray);*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Assign each section to a specific grid area */
+.about {
+    grid-area: about;
+}
+
+.products {
+    grid-area: products;
+}
+
+.events {
+    grid-area: events;
+}
+
+.special_orders {
+    grid-area: special_orders;
+}
+
+.coming_soon {
+    grid-area: coming_soon;
+}
+
+/* Style for each grid item */
+.grid-image {
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.about, .events, .products, .special_orders, .coming_soon {
+    background-color: var(--white);
+   
+    padding: 1em;
+}
+
+/* Typography */
+.about h2, .events h2, .products h2, .special_orders h2, .coming_soon h2 {
+    font-size: 1.5em;
+    color: var(--rich-red);
+    margin-bottom: 0.5em;
+}
+
+.about p, .events p, .products p, .special_orders p, .coming_soon p {
+    color: var(--dark-gray);
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/* Link styles */
+.about_link, .events_link, .products_link, .index_link {
+    display: inline-block;
+    color: var(--light-gold);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.about_link:hover, .events_link:hover, .products_link:hover, .index_link:hover {
+    color: var(--rich-red);
+}
+
+/*ABOUT PAGE TESTING (Subject to change)*/
+/* About Page Styling */
+.grid_section {
+    display: grid;
+    grid-template-rows: auto auto;
+    background-color: var(--white); /* Section background */
+    margin: 20px 0;
+    border: 1px solid var(--dark-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Section Header Styling */
+.section_header {
+    background-color: var(--light-gold); /* Yellow background */
+    color: var(--dark-gray);
+    padding: 1em;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 0;
+}
+
+/* Section Content Styling */
+.section_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 2em;
+}
+
+/* Image Styling */
+.section_image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Paragraph Styling */
+.section_content p {
+    font-size: 1.2em;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section_content {
+        grid-template-columns: 1fr; /* Stack content vertically on smaller screens */
+        text-align: center;
+    }
+
+    .section_image {
+        margin: 0 auto; /* Center image on smaller screens */
+    }
+}
+
+
+/* Hero Section */
+.hero, .products_hero {
+    background-color: var(--dark-gray);
+    color: var(--light-gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1, .products_hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero p, .products_hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.hero-button {
+    background-color: var(--light-gold);
+    color: var(--dark-gray);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: var(--rich-red);
+    color: var(--white);
+}
+
+/* Main Section Titles */
+h2 {
+    font-size: 2em;
+    color: var(--rich-red);
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+/* Product Grid */
+.merchandise {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2em;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.grid-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.hats, .hoodies, .calendar, .candle, .bag {
+    background-color: var(--white);
+    border: 1px solid var(--dark-gray);
+    border-radius: 8px;
+    padding: 1em;
+}
+
+.hats h2, .hoodies h2, .calendar h2, .candle h2, .bag h2 {
+    font-size: 1.5em;
+    color: var(--rich-red);
+    margin-bottom: 0.5em;
+}
+
+.hats p, .hoodies p, .calendar p, .candle p, .bag p {
+    color: var(--dark-gray);
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+.section-link {
+    display: inline-block;
+    color: var(--light-gold);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.section-link:hover {
+    color: var(--rich-red);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 2em;
+    background-color: var(--white);
+}
+
+.section-header {
+    font-size: 1.8em;
+    color: var(--rich-red);
+    text-align: center;
+    margin: 0%;
+    background-color: var(--light-gold);
+}
+
+.testimonials blockquote {
+    background-color: var(--light-gold);
+    color: var(--dark-gray);
+    padding: 1em;
+    margin: 1em auto;
+    border-left: 5px solid var(--rich-red);
+    border-radius: 8px;
+    max-width: 700px;
+    font-style: italic;
+}
+
+.testimonials blockquote p {
+    margin: 0;
+}
+
+
+/* Hero Section for Events Page */
+.events_hero {
+    background-color: var(--dark-gray);
+    color: var(--light-gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.events_hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.events_hero p {
+    font-size: 1.2em;
+}
+
+/* Upcoming Events Grid */
+.upcoming_events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2em;
+    background-color: var(--white);
+}
+
+.upcoming_events div {
+    background-color: var(--white);
+    border: 1px solid var(--dark-gray);
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+}
+
+.grid-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.upcoming_events h2 {
+    font-size: 1.5em;
+    color: var(--rich-red);
+    margin-bottom: 0.5em;
+}
+
+.upcoming_events p {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.section-link {
+    color: var(--light-gold);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.section-link:hover {
+    color: var(--rich-red);
+}
+
+/* Additional Information Section */
+.more_information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 2em;
+    background-color: var(--white);
+}
+
+.more_information div {
+    background-color: var(--white);
+    border: 1px solid var(--dark-gray);
+    border-radius: 8px;
+    padding: 1em;
+}
+
+.more_information h3 {
+    font-size: 1.3em;
+    color: var(--rich-red);
+    margin-bottom: 0.5em;
+}
+
+.more_information p {
+    font-size: 1em;
+    color: var(--dark-gray);
+    margin-bottom: 1em;
+}
+
+/* Hero Section for Gallery Page */
+.gallery_hero {
+    background-color: var(--dark-gray);
+    color: var(--light-gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery_hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.gallery_hero p {
+    font-size: 1.2em;
+}
+
+/* Section Titles */
+.section-header {
+    font-size: 2em;
+    color: var(--rich-red);
+    text-align: center;
+    /*margin: 1.5em 0;*/
+}
+
+/* Grid Layout for Highlights and Showcase */
+.highlights, .showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2em;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.highlights div, .showcase div {
+    background-color: var(--white);
+    border: 1px solid var(--dark-gray);
+    border-radius: 8px;
+    padding: 1em;
+}
+
+.grid-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.highlights h2, .showcase h2 {
+    font-size: 1.5em;
+    color: var(--rich-red);
+    margin-bottom: 0.5em;
+}
+
+.highlights p, .showcase p {
+    font-size: 1em;
+    color: var(--dark-gray);
+}
+
+/* Hero Section for Support Page */
+.support_hero {
+    background-color: var(--dark-gray);
+    color: var(--light-gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.support_hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.support_hero p {
+    font-size: 1.2em;
+}
+
+/* Section Headers */
+.section-header {
+    font-size: 1.8em;
+    color: var(--rich-red);
+    text-align: center;
+    /*margin: 1.5em 0;*/
+}
+
+/* FAQ Section */
+.faq {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 2em;
+    background-color: var(--white);
+}
+
+.faq div {
+    background-color: var(--white);
+    border: 1px solid var(--dark-gray);
+    border-radius: 8px;
+    padding: 1.5em;
+}
+
+.faq h3 {
+    font-size: 1.3em;
+    color: var(--rich-red);
+    margin-bottom: 0.5em;
+}
+
+.faq p {
+    font-size: 1em;
+    color: var(--dark-gray);
+}
+
+/* Contact Us Section */
+.contact_us {
+    text-align: center;
+    padding: 2em;
+    background-color: var(--white);
+}
+
+.contact_us p {
+    font-size: 1.1em;
+    color: var(--dark-gray);
+    margin-bottom: 1em;
+}
+
+.contact_us address {
+    font-style: normal;
+    color: var(--dark-gray);
+}
+
+.contact_us address p {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.contact_us a {
+    color: var(--rich-red);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact_us a:hover {
+    color: var(--light-gold);
+}
+
+/* Specialized for Hero Images ONLY */
+/* Hero Section with Background Image */
+.support_hero, .events_hero, .products_hero, .about_hero, .index_hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--dark-gray); /* Fallback color if image doesn't load */
+    color: var(--light-gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.support_hero {
+    background-image: url("../assets/support_hero_image.jpg");
+}
+
+.events_hero {
+    background-image: url("../assets/events_hero_image.jpg");
+}
+
+.products_hero {
+    background-image: url("../assets/products_hero_image.jpg");
+}
+
+.about_hero {
+    background-image: url("../assets/about_hero_image.jpg");
+}
+
+.index_hero {
+    background-image: url("../assets/index_hero_image.png");
+}
+
+/* Hero Text Styling */
+.support_hero h1, .events_hero h1, .products_hero h1, .about_hero h1, .index_hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
+}
+
+.support_hero p, .events_hero p, .products_hero p, .about_hero p, .index_hero p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    margin: 0.5em 0;
+}
+
+
+/* Responsive Design */
+
+/*INDEX PAGE*/
+@media (max-width: 768px) {
+    .index_grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: 
+            "about"
+            "products"
+            "events "
+            "special_orders"
+            "coming_soon";
+        gap: 20px;
+        padding: 2em;
+        text-align: center;
+        background-color:#656565;
+        border-radius: 8px;
+        /*border-bottom: 1px solid var(--dark-gray);*/
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .about {
+        grid-area: about;
+        border-radius: 8px;
+    }
+    
+    .products {
+        grid-area: products;
+        border-radius: 8px;
+    }
+    
+    .events {
+        grid-area: events;
+        border-radius: 8px;
+    }
+    
+    .special_orders {
+        grid-area: special_orders;
+        border-radius: 8px;
+    }
+    
+    .coming_soon {
+        grid-area: coming_soon;
+        border-radius: 8px;
+    }
+    
+}
+
+
+/*ABOUT PAGE*/
+
+@media (max-width: 768px) {
+    .story, .vision {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 2em;
+        text-align: center;
+        background-color:#656565;
+        border-radius: 8px;
+    }
+
+    .beginnings, .mission, .growth, .team, .innovation, .authenticity, .community, .sustainability {
+        background-color: var(--white);
+        border-radius: 8px;
+        padding: 1em;
+    }
+}
+
+/*PRODUCTS PAGE*/
+
+@media (max-width: 768px) {
+
+    .merchandise {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 2em;
+        text-align: center;
+        background-color:#656565;
+        border-radius: 8px;
+    }
+
+    .hats, .hoodies, .calendar, .candle, .bag {
+        background-color: var(--white);
+        border: none;
+        border-radius: 8px;
+        padding: 1em;   
+    }
+
+
+
+}
+
+/*JAVASCRIPT STYLING*/
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position:fixed;
+    bottom: 20px;
+    background-color: var(--light-gold);
+    color: var(--dark-gray);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: none;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--rich-red);
+    color: var(--white);
+}
+
+/* Mobile Navigation */
+.nav-toggle {
+    display: none;
+    background-color: var(--rich-red);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-toggle:hover {
+    background-color: var(--light-gold);
+    color: var(--dark-gray);
+}
+
+.navbar nav ul.active {
+    display: block;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid var(--light-gold);
+    border-top: 5px solid var(--rich-red);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.faq p {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.faq h3.active {
+    color: var(--rich-red);
+}
+
+body.dark-mode {
+    background-color: var(--dark-gray);
+    color: var(--light-gold);
+}
+
+body.dark-mode a {
+    color: var(--light-gold);
+}
+
